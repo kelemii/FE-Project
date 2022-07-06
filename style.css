@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: row;
+    background-image: url('https://flxt.tmsimg.com/assets/p10376284_b_h9_av.jpg');
+}
+/* #results {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+#results:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      
+} */
+.alive {
+    height: 15px;
+    width: 15px;
+    background-color: green;
+    border-radius: 50%;
+}
+.dead {
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 50%;
+}
+.unknown {
+    height: 15px;
+    width: 15px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.card-image {
+    border-radius: 5px 5px 0 0;
+}
+.card-div {
+    margin: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.card-div:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
