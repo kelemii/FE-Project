@@ -3,11 +3,12 @@ body {
     justify-content: center; */
     /* align-items: row; */
     background-image: url('ricknmorty.jpg');
+    max-width: 1920px;
 }
 #results {
-    display: flex;
-    justify-content: center;
-    align-items: row;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
 .alive {
@@ -44,11 +45,18 @@ body {
 .card-div:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     opacity: 100%;
-}
+    transform: scale(1.08);}
 .title {
-    color: white;
     text-align: center;
+    background: linear-gradient(to right, cyan 0%, hotpink 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #user-form {
+    text-align: center;
+}
+#user-form1 {
     text-align: center;
 }
