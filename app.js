@@ -6,8 +6,8 @@ const $userForm1 = $("#user-form1");
 // RANDOM BUTTON
 $userForm.submit((event) => {
   event.preventDefault();
-  $('#results').html("");
-  let rand1 = Math.floor(Math.random() * (1000 - 174));
+  $("#results").html("");
+  let rand1 = Math.floor(Math.random() * (1000 - 174)); //gets a random number
   const URL = `https://rickandmortyapi.com/api/character/${rand1}`;
   $.get(URL, (data) => {
     const $div = $(`<div></div>`).addClass("card-div").prependTo($container);
@@ -45,21 +45,19 @@ $userForm.submit((event) => {
   });
 });
 
-
 const $input = $('input[name="search"]')
-
 //Search
 $userForm1.submit((event) => {
-  const userInput = $input.val();
+  const userInput = $input.val(); //user input
   event.preventDefault();
-  $('#results').html("");
-  const URL = `https://rickandmortyapi.com/api/character/?name=${userInput}`;
+  $("#results").html(""); //clears page
+  const URL = `https://rickandmortyapi.com/api/character/?name=${userInput}`; 
   $.get(URL, (data) => {
     console.log(data);
-    for (let i=0;i<data.results.length;i++){
-      let current = data.results[i]
+    for (let i = 0; i < data.results.length; i++) { //loop to get all character info and make the cards
+      let current = data.results[i];
       const $div = $(`<div></div>`).addClass("card-div").prependTo($container);
-      if (current.status === "Alive") {
+      if (current.status === "Alive") { // button changes depending on alive or unk or dead
         const $cardStatus = $(
           `<h5><button class="alive"></button><em>  ${current.status}</em</h5>`
         )
@@ -78,7 +76,7 @@ $userForm1.submit((event) => {
           .addClass("card-status")
           .prependTo($div);
       }
-      const $species = $(`<p>Species: ${current.species}</p>`)
+      const $species = $(`<p>Species: ${current.species}</p>`) // all other card info here
         .addClass("card-species")
         .prependTo($div);
       const $location = $(`<p>Location: ${current.location.name}</p>`)
@@ -93,4 +91,3 @@ $userForm1.submit((event) => {
     }
   });
 });
-
